@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400;600;700&display=swap");
+/* Reset Margin padding */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* Desktop Styling */
+:root {
+  font-size: 62.5%;
+  --whiteColor: rgb(255, 255, 255);
+  --blackColor: rgb(0, 0, 0);
+  --transparentRedColor: rgba(255, 33, 92, 0.416);
+  --redGrayColor: rgb(255, 183, 183);
+}
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.6rem;
+  color: var(--blackColor);
+  background: linear-gradient(to right, rgb(255, 43, 174), rgb(255, 219, 37));
+}
+/* ---------------------------------------------------------------------------------------------- */
+/* -----Navbar Styling----- */
+/* in desktop screen only humburger visible */
+.navbar input[type="checkbox"],
+.navbar .humburgerLines {
+  display: none;
+}
+.navbar {
+  background-color: var(--whiteColor);
+  font-size: 2rem;
+  padding: 1.5rem 0;
+}
+.menuItems {
+  width: 75%;
+  max-width: 120rem;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+.menuItems li {
+  list-style: none;
+}
+.navbar a {
+  color: var(--blackColor);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 1s ease-in-out;
+}
+.navbar a:hover {
+  color: #0011ad;
+}
+.icons {
+  position: absolute;
+  top: 1.5rem;
+  right: 4rem;
+  display: flex;
+  width: 6rem;
+  justify-content: space-between;
+}
+.callIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--blackColor);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* -------------------------------------------------------------------------------------- */
+/* Showcase Styling */
+.showcase {
+  height: 80vh;
+  background-image: url("./img1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.showcaseContent {
+  background-color: var(--transparentRedColor);
+  position: absolute;
+  padding: 5rem 14rem 5rem 5rem;
+  width: 60rem;
+  top: 20rem;
+  left: 7.5rem;
+  color: var(--whiteColor);
+  z-index: 2;
+}
+.mainTitle {
+  font-weight: 700;
+  font-size: 4rem;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+/* -------------------------------------------------------------- */
+/* Order Styling */
+.order {
+  margin: 10rem 0;
+}
+.orderHeading {
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--whiteColor);
+  text-align: center;
+}
+.orderItems {
+  margin: 8rem auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.eachItem {
+  padding: 2rem;
+  background-color: var(--whiteColor);
+  border-radius: 0 8rem 0 8rem;
+  width: 30rem;
+  text-align: center;
+}
+.eachItem img {
+  width: 26rem;
+  height: 26rem;
+  object-fit: cover;
+  object-position: center;
+  border-top-right-radius: 8rem;
+  overflow: hidden;
+}
+.itemName {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+.itemInfo {
+  margin-bottom: 1rem;
+}
+.orderButton {
+  background-color: var(--redGrayColor);
+  padding: 1rem 5rem;
+  width: fit-content;
+  margin: auto;
+  border-radius: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+/* ---------------------------------------------------------------------------- */
+/* Media Query for different width */
+@media (max-width: 1200px) and (min-width: 1000px) {
+  .eachItem {
+    width: 24rem;
+  }
+  .eachItem img {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+/* -------------------------------------------------------------------------------- */
+@media (max-width: 1000px) and (min-width: 767px) {
+  .orderItems {
+    width: 85%;
+  }
+  .eachItem {
+    width: 20rem;
+  }
+  .eachItem img {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+/* ------------------------------------------------------------------------- */
+/* For mobile screen */
+@media (max-width: 767px) {
+  /* root font change beacuse of margin padding look good */
+  :root {
+    font-size: 45%;
+  }
+  body {
+    font-size: 2.1rem;
+  }
+  /* Showcase content position center for looks good */
+  .showcaseContent {
+    background-color: var(--transparentRedColor);
+    position: absolute;
+    padding: 5rem;
+    width: 45rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--whiteColor);
+  }
+  /* Createing humburger only for width below 768px*/
+  .navbar input[type="checkbox"],
+  .navbar .humburgerLines {
+    display: block;
+  }
+  .navbar {
+    position: relative;
+    display: block;
+    height: 6rem;
+    width: 100vw;
+    background-color: var(--whiteColor);
+  }
+  .navbar input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 3rem;
+    width: 3.5rem;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 5;
+    opacity: 0;
+  }
+  .navbar .humburgerLines {
+    position: absolute;
+    display: block;
+    height: 3rem;
+    width: 3.5rem;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .humburgerLines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--blackColor);
+  }
+  .menuItems {
+    position: absolute;
+    background-color: var(--whiteColor);
+    flex-direction: column;
+    height: 100vh;
+    width: 30rem;
+    padding-top: 6rem;
+    padding-left: 5rem;
+    margin-left: -3rem;
+    transform: translateX(-150%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 3;
+  }
+  /* When checkbox click then menuItems are shown and humburger changed animately */
+  .humburgerLines .line1,
+  .humburgerLines .line2,
+  .humburgerLines .line3 {
+    transform-origin: 0%;
+    transition: transform 0.5s ease-in-out;
+  }
+  .navbar input[type="checkbox"]:checked ~ .humburgerLines .line1 {
+    transform: rotate(45deg);
+  }
+  .navbar input[type="checkbox"]:checked ~ .humburgerLines .line3 {
+    transform: rotate(-45deg);
+  }
+  .navbar input[type="checkbox"]:checked ~ .humburgerLines .line2 {
+    transform: scaleY(0);
+  }
+  .navbar input[type="checkbox"]:checked ~ .menuItems {
+    transform: translateX(0);
+  }
+  /* resized items for look good */
+  .orderItems {
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .eachItem {
+    width: 40rem;
+    padding: 5rem;
+    margin: 5rem 0;
+  }
+  .eachItem img {
+    width: 30rem;
+    height: 30rem;
+  }
+}
